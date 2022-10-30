@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PlansController;
 use Illuminate\Support\Facades\Route;
 
@@ -17,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
-Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [PlansController::class, 'index'])->name('home');
 Route::get('/plans_form',[PlansController::class, 'PlansFormsGet'])->name('Plans.Forms.get'); 
 Route::post('/plans_form',[PlansController::class, 'PlansFormsPost'])->name('Plans.Forms.post'); 
 Route::get('/beneficiario_form',[PlansController::class, 'BeneficiarioFormsGet'])->name('Beneficiario.Forms.get'); 
