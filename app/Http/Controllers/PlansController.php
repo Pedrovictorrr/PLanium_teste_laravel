@@ -11,7 +11,7 @@ class PlansController extends Controller
 
     public function index()
     { 
-
+        // Juntando preços e planos retornados do JSON para apresentar na view principal
         $json_plans = file_get_contents("json/plans.json");
         $dados_plans_decode = json_decode($json_plans);
         $json_prices = file_get_contents("json/prices.json");
@@ -38,7 +38,8 @@ class PlansController extends Controller
         return view ('index',compact('dados_info'));
     }
     public function PlansFormsGet()
-    {
+    {   
+        // Decode plans para primeiro formulario de pre cadastro, ultilizando para consulta e values da view
         $json_plans = file_get_contents("json/plans.json");
         $dados_plans_decode = json_decode($json_plans);
         return view('forms.form_plans', compact('dados_plans_decode'));
@@ -121,17 +122,19 @@ class PlansController extends Controller
         $beneficiarios = NULL;
       
         for($i=0;$i<$request->total_beneficiarios;$i++){
-
+           
+            // Atribuindo variaveis aos requests
             $nome = $request['nome'.$i];
             $idade = $request['idade'.$i];
             $cod_plano = $request['cod_plano'];
             $total_beneficiarios = $request['total_beneficiarios'];
-
+            
+            // Tratando idade da cada beneficiario
             $idade = date_create($idade);
             $idade = $idade->format('Y');
             $idade = date('Y') - $idade;
            
-
+            // Verificando a q faixa cada beneficiario pertence 
             if($idade <= 17){
                 $faixa = $request->faixa1;
             }elseif($idade > 17 && $idade <= 40){
@@ -139,7 +142,7 @@ class PlansController extends Controller
             }else{
                 $faixa = $request->faixa3;
             }
-            //Separando tabela por pessoa.
+            //Separando array por pessoa.
             if($beneficiarios == NULL){
                 $beneficiarios = array(
                     array('Nome' => $nome , 'idade' => $idade , 'Valor' => $faixa ,'cod_plano' => $cod_plano),
@@ -151,7 +154,8 @@ class PlansController extends Controller
                 }
                 
         }
-        
+
+        // Salvando Beneficiarios em um arquivo JSON
          $arquivo = 'json/beneficiarios.json';
          file_put_contents($arquivo, json_encode($beneficiarios));
 
@@ -166,6 +170,7 @@ class PlansController extends Controller
         $valor_total = 0;
         $json = null;
 
+        // Separando em array todos beneficiarios e diferenciando do titular da conta.
         foreach($beneficiarios as $valor){
             $valor_total += $valor['Valor'];
             if($titular == null){
@@ -182,6 +187,7 @@ class PlansController extends Controller
           
         }
         array_push($json, array('Valor_total' => $valor_total));
+        // Salvando proposta com dados finais do formulario
         $arquivo = 'json/proposta.json';
         file_put_contents($arquivo, json_encode($json));
         return view('forms.form_orçamento',compact('beneficiarios','valor_total','titular'));
