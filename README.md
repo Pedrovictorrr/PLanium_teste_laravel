@@ -1,66 +1,46 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+<img src="https://www.planium.io/wordpress/wp-content/uploads/2018/11/logo-Planium-06.svg" width="250" height="100">
+**[Especificações para o teste]**
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+**Observações:**
+  - "Plano" dito aqui significa "Plano de Saúde".
+  - "Beneficiários" são as pessoas participantes/pagantes de um plano de saúde.
 
-## About Laravel
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+1. Você recebeu duas tabelas em JSON(presente nesse repositório), uma de Planos e outra de Preços.
+	- A tabela de plano possui os planos que serão vendidos.
+	- A tabela de preço possui o(s) preço(s) para cada plano listado na tabela de planos.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+2. Cada plano tem três faixas de preços, sendo estas categorizadas por idade:
+	- Pessoas de 0 a 17 anos vão para a faixa1.
+	- Pessoas de 18 a 40 anos vão para a faixa2.
+	- Pessoas com mais de 40 anos vão para a faixa3.
 
-## Learning Laravel
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+3. Cada plano pode ter preços variados dependendo da quantidade de pessoas participando do mesmo.
+	- Essa variação é representada na tabela de preços pela coluna "minimo_vidas".
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+4. Com as especificações acima, faça uma API que permita a entrada dos seguintes dados, salvando-os em um Json chamado beneficiarios.json:
+    - Quantidade de beneficiários
+    - Idade de cada beneficiário
+    - Nome de cada beneficiário
+    - Registro do plano escolhido (deve ser um dos registros listados na tabela de plano)
+      - Caso o usuário liste um registro inexistente, deve mostrar mensagem de erro.
 
-## Laravel Sponsors
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
 
-### Premium Partners
+5. Essa API deverá ler a tabela de Plano e a tabela de Preço, e retornar:
+    - Preço de cada beneficiário para o plano escolhido, juntamente com a sua idade.
+    - O preço total do Plano escolhido (soma do preço de cada beneficiário)
+	
+6. Ao final, unir todas as informações e salvar em um JSON chamado proposta.json, o mesmo deverá conter todas as informações sobre os beneficiarios, planos e preços.
+    - **Observações:**
+    Seu **back-end** deverá ser feita utilizando PHP ou Node.js
+    Criar um front-end pra consumir essas informações, fique a vontade para utilizar a ferramenta/framework que quiser.
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+7. Ao término, dê reply no e-mail que você originalmente recebeu com o link do seu repositório no [GitHub](https://github.com/).
+  - Tempo total: 5 dias após o envio do teste.
 
-## Contributing
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+**Good luck and have fun :)**
