@@ -15,7 +15,7 @@
                      @if (Route::has('login'))
                    
                         @auth
-                            <a href="{{ url('/home') }}" class="nav-link py-3 px-0 px-lg-3 rounded">Dashboard</a>
+                            <a href="{{ route("dashboard") }}" class="nav-link py-3 px-0 px-lg-3 rounded">Dashboard</a>
                         @else
                             <a href="{{ route('login') }}" class="nav-link py-3 px-0 px-lg-3 rounded">Log in</a>
     

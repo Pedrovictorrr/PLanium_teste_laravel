@@ -47,6 +47,6 @@ class HomeController extends Controller
             }
         }
        
-        return view('index',compact('dados_info'));
+        return view('home',compact('dados_info'));
     }
 }

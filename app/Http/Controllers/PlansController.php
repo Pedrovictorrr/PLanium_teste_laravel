@@ -142,6 +142,8 @@ class PlansController extends Controller
             }else{
                 $faixa = $request->faixa3;
             }
+
+            
             //Separando array por pessoa.
             if($beneficiarios == NULL){
                 $beneficiarios = array(

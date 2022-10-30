@@ -18,7 +18,9 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
-Route::get('/home', [PlansController::class, 'index'])->name('home');
+Route::get('/dashboard',[HomeController::class , 'index'])->name('dashboard');
+
+Route::get('/', [PlansController::class, 'index'])->name('home');
 Route::get('/plans_form',[PlansController::class, 'PlansFormsGet'])->name('Plans.Forms.get'); 
 Route::post('/plans_form',[PlansController::class, 'PlansFormsPost'])->name('Plans.Forms.post'); 
 Route::get('/beneficiario_form',[PlansController::class, 'BeneficiarioFormsGet'])->name('Beneficiario.Forms.get'); 
