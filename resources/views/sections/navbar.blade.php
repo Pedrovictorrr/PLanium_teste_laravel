@@ -11,20 +11,25 @@
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded"
                         href="{{route("home")}}">Planos</a></li>
-                <li class="nav-item mx-0 mx-lg-1">  
+                
                      @if (Route::has('login'))
                    
                         @auth
+                        <li class="nav-item mx-0 mx-lg-1"> 
                             <a href="{{ route("dashboard") }}" class="nav-link py-3 px-0 px-lg-3 rounded">Dashboard</a>
+                        </li>
                         @else
+                        <li class="nav-item mx-0 mx-lg-1"> 
                             <a href="{{ route('login') }}" class="nav-link py-3 px-0 px-lg-3 rounded">Log in</a>
-    
+                        </li>
                             @if (Route::has('register'))
+                            <li class="nav-item mx-0 mx-lg-1"> 
                                 <a href="{{ route('register') }}" class="nav-link py-3 px-0 px-lg-3 rounded">Register</a>
+                            </li>
                             @endif
                         @endauth
                 @endif
-    </li>
+ 
           
             </ul>
         </div>
