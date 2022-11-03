@@ -2,7 +2,7 @@
 <br>
 <strong>Link do teste: </strong>https://github.com/Luziarte-Planium/planium-test/blob/main/README.md<br>
 <br>
-<strong>Ferramenta ultilizadas:</strong> Laravel 9 (PHP)<br><br>
+<strong>Ferramenta ultilizada:</strong> Laravel 9 (PHP)<br><br>
 
 <strong>Para realizar a aplicação, rode no terminal:</strong><br>
 
@@ -14,7 +14,7 @@
 -> Rota padrao para começo da aplicação: 127.0.0.1:8000/<br>
 -> app/http/controller/PlansController -> Acessar back-end da aplicação<br>
 -> resources/views -> Para acessar o front-end da aplicação<br>
--> Os arquivos JSON esta em public
+-> Os arquivos JSON estão em public
 <br><br>
 <strong>Imagens da aplicação</strong><br><br>
 <img src='/planium/Captura de tela de 2022-11-03 11-35-10.png'>
