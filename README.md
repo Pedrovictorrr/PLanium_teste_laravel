@@ -10,11 +10,11 @@
 -> resources/views -> Para acessar o front-end da aplicação<br>
 -> Os arquivos JSON esta em public
 <br><br>
-<strong>Imagens da aplicação</strong><br>
+<strong>Imagens da aplicação</strong><br><br>
 <img src='/planium/Captura de tela de 2022-11-03 11-35-10.png'>
 <img src='/planium/Captura de tela de 2022-11-03 11-35-20.png'>
 <img src='/planium/Captura de tela de 2022-11-03 11-35-44.png'>
 <img src='/planium/Captura de tela de 2022-11-03 11-35-52.png'>
 <img src='/planium/Captura de tela de 2022-11-03 11-36-20.png'>
 <img src='/planium/Captura de tela de 2022-11-03 11-36-25.png'>
-<img src='/planium/Captura de tela de 2022-11-03 11-35-10.png'>
+<img src='/planium/Captura de tela de 2022-11-03 11-37-06.png'>
