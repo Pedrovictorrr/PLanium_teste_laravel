@@ -2,7 +2,7 @@
 <br>
 <strong>Link do teste: </strong>https://github.com/Luziarte-Planium/planium-test/blob/main/README.md<br>
 <br>
-<strong>Ferramenta ultilizadas:</strong> Laravel 9 (PHP)<br>
+<strong>Ferramenta ultilizadas:</strong> Laravel 9 (PHP)<br><br>
 
 <strong>Para realizar a aplicação, rode no terminal:</strong><br>
 
